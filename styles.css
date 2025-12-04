@@ -1,0 +1,494 @@
+/* --------------------------------------------------
+   GLOBAL STYLE RESET
+-------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins";
+    background: #ffffff;
+    color: #1a2c2c;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.container {
+    width: 92%;
+    margin: auto;
+    max-width: 1300px;
+}
+
+
+/* --------------------------------------------------
+   COLOR PALETTE (PALETTE C)
+-------------------------------------------------- */
+
+:root {
+    --mint: YELLOW;
+    --mint-dark: #69aaf5;
+    --blue: #69aaf5;
+    --blue-dark: #3c79bf;
+    --cream: #f7faf5;
+    --grey: #e8edea;
+    --text: #1a2c2c;
+}
+
+
+/* --------------------------------------------------
+   HEADER / NAVBAR
+-------------------------------------------------- */
+
+.site-header {
+    width: 100%;
+    background: #dcd808d9;
+    backdrop-filter: yellow(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-text {
+    margin-left: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--mint-dark);
+}
+
+.nav {
+    transition: transform 0.4s ease;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    padding: 6px 0;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--mint);
+    transition: 0.3s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+}
+
+.nav-toggle span {
+    width: 26px;
+    height: 3px;
+    background: var(--mint-dark);
+    border-radius: 3px;
+}
+
+
+/* --------------------------------------------------
+   HERO SECTION
+-------------------------------------------------- */
+
+.hero {
+    background: linear-gradient(to bottom right, rgba(60, 10, 198, 0.768), #0f6fdedc), url("") center/cover no-repeat;
+    color: white;
+    padding: 140px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.1rem;
+    font-weight: 700;
+}
+
+.hero-sub {
+    margin: 12px 0 25px;
+    font-size: 1.2rem;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--mint-dark);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #235a54;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--mint-dark);
+}
+
+
+/* --------------------------------------------------
+   QUICK STATS
+-------------------------------------------------- */
+
+.stats {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+}
+
+.stat {
+    flex: 1;
+    background: white;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px #8eb1a12e;
+}
+
+.stat h3 {
+    font-size: 2.4rem;
+    color: var(--mint-dark);
+}
+
+
+/* --------------------------------------------------
+   ABOUT SECTION
+-------------------------------------------------- */
+
+.about {
+    padding: 90px 0;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-left h2 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+    color: var(--mint-dark);
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--blue-dark);
+    text-decoration: none;
+}
+
+
+/* --------------------------------------------------
+   PROGRAMS
+-------------------------------------------------- */
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.2rem;
+    color: var(--mint-dark);
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+}
+
+.program-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px #a0cfc02e;
+    transition: 0.3s;
+}
+
+.program-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px #7db5a52e;
+}
+
+.program-card h3 {
+    margin-top: 15px;
+    color: var(--mint-dark);
+}
+
+
+/* --------------------------------------------------
+   DEPARTMENTS
+-------------------------------------------------- */
+
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.box {
+    background: var(--blue);
+    padding: 18px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+    transition: .3s;
+}
+
+.box:hover {
+    background: var(--blue-dark);
+}
+
+
+/* --------------------------------------------------
+   ADMISSIONS
+-------------------------------------------------- */
+
+.admission-steps {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.step {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    border-left: 6px solid var(--mint);
+    box-shadow: 0 4px 18px #8eb1a12e;
+}
+
+.step span {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--mint-dark);
+}
+
+
+/* --------------------------------------------------
+   CAMPUS LIFE
+-------------------------------------------------- */
+
+.campus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.campus-card {
+    text-align: center;
+    font-weight: 600;
+    color: var(--mint-dark);
+}
+
+
+/* --------------------------------------------------
+   FACILITIES
+-------------------------------------------------- */
+
+.fac-grid {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 22px;
+}
+
+.fac-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 18px #a0cfc02e;
+    transition: .3s;
+}
+
+.fac-card:hover {
+    transform: scale(1.05);
+}
+
+.fac-card span {
+    font-size: 2rem;
+}
+
+
+/* --------------------------------------------------
+   GALLERY
+-------------------------------------------------- */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+}
+
+
+/* --------------------------------------------------
+   CONTACT
+-------------------------------------------------- */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.map iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    border-radius: 14px;
+}
+
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+
+.site-footer {
+    margin-top: 80px;
+    background: var(--mint-dark);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+}
+
+
+/* --------------------------------------------------
+   FADE-UP SCROLL EFFECT
+-------------------------------------------------- */
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 0.8s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+/* --------------------------------------------------
+   RESPONSIVE STYLES
+-------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .admission-steps {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: white;
+        height: 100vh;
+        width: 240px;
+        transform: translateX(110%);
+        padding-top: 80px;
+    }
+    .nav.open {
+        transform: translateX(0%);
+    }
+    .nav-list {
+        flex-direction: column;
+        padding-left: 25px;
+    }
+    .stats {
+        flex-direction: column;
+    }
+}
+
+
+    .reg-btn {
+        background: #0056b3;
+        color: #ffffff;
+        padding: 12px 28px;
+        border: none;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .reg-btn:hover {
+        background: #003f80;
+        transform: translateY(-2px);
+    }
+
+    .reg-btn:active {
+        transform: scale(0.97);
+    }
